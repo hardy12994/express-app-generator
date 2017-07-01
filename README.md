@@ -68,24 +68,27 @@ The array which is present just after the `REST` is use for middlewares.
 Suppose I want to make authentication every time so the function of 
 authentication will be pass in the middleware Array.
 
-Note - All the the Middleware fuctions must have parameters `req,res,next` where 
+Things `REST` Or `CRUD` Gives -
+
+- If the Request is for **`POST`** then it go for `expots.create=(req,res)=>{};`
+
+- If the Request is for **`GET`** then it go for `expots.get=(req,res)=>{};`
+http://localhost:3789/api/users/:id
+
+- If the Request is for **`GET`** then it go for `expots.search=(req,res)=>{};`
+http://localhost:3789/api/users
+Here many query params `?` can use.
+
+- If the Request is for **`PUT`** then it go for `expots.update=(req,res)=>{};`
+
+- If the Request is for **`DELETE`** then it go for `expots.delete=(req,res)=>{};`
+
+
+**Note** - All the the Middleware fuctions must have parameters `req,res,next` where 
 req,res are request response express generated objects and next is the 
 callback function which will call when one middleware work is DONE and
 it will go to next middleware function (if present) in that array and perform same,
-then go the main function in the users.js. 
-
-- If the Request is for [`GET`] then it go for `expots.get=(req,res)=>{};`
-[http://localhost:3789/api/users/:id]
-
-- If the Request is for `GET` then it go for `expots.search=(req,res)=>{};`
-[http://localhost:3789/api/users]
-Here many query params `?` can use.
-
-- If the Request is for `POST` then it go for `expots.create=(req,res)=>{};`
-
-- If the Request is for `PUT` then it go for `expots.update=(req,res)=>{};`
-
-- If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
+then go the main function in the `users.js`. 
 
 **User Define Requests** -
 
@@ -154,5 +157,5 @@ Here many query params `?` can use.
         }]);
 ```
 
-Note: `api` keyword in URL is Constant all over the Router.
+**Note**: `api` keyword in URL is Constant all over the Router.
 So your base url will be http://localhost:3789/api/ .
