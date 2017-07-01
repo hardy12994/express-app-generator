@@ -44,13 +44,21 @@ you can change it by update `app.use()` or `app.set()`;
 
 ## Routing
 - Clean and Easy To Use.
-- **Required Things** - The `api` folder in root of app is must and 
-in this folder all the .js files will be like 
-`users.js` not `user.js` , `employees.js` not `employee.js` which means `s` or `es` sufix is must.
+- **Required Things** 
+    
+    > The `api` folder in root of app is must and 
+      in this folder all the .js files will be like 
+      `users.js` not `user.js` , `employees.js` not `employee.js` 
+      which means `s` or `es` sufix is must.
+    
+    > The `logs` folder is required ,this folder is use for 
+      logging the logs in json files ,which we get as in console
+
+
 - This Router Provides Simple CRUD Mechanism . In which Combinations of Arrays and Objects are use To Build it.
 - `appRouter` method  which is present in app generator helps to make Routing in Flexible way.
 
-Lets get started for Routing -
+*Lets get started for Routing* -
 **REST or CRUD**
 ```sh
     let api= app.appRouter; 
@@ -160,5 +168,99 @@ then go the main function in the `users.js`.
 
 **Note**: `api` keyword in URL is Constant all over the Router.
 So your base url will be http://localhost:3789/api/ .
+
+## Responses
+
+Their are Four Types of Responses
+All the Responses is of `status Code is 200` . 
+- data
+    - It can take one or two params `data,message`,
+     `data` is mandatory. 
+    - It is use as -
+
+    ```sh
+    res.data({
+        name:"Leo",
+        age:21
+    });
+    
+     //res which you get from any query
+    ```
+
+    - This will give Response -
+    ```sh
+    {
+        "isSuccess":true,
+        "data":{
+            "name":"Leo",
+            "age":21
+            }
+    }
+    ```
+- page
+    - It can take one or two params `items, pageSize, pageNo, totalRecordsCount`
+     `items` is mandatory.
+    - Can also use for Paginations.
+    - It is use as -
+
+    ```sh
+    res.page([{
+        name:"Leo",
+        age:21
+    },{
+        name:"Hardy",
+        age:22
+    }]);
+    
+     //res which you get from any query
+    ```
+    
+    - This will give Response -
+    ```sh
+    {
+        "isSuccess":true,
+        "items":[{
+             "name":"Leo",
+             "age":21
+         },{
+            "name":"Hardy",
+            "age":22
+         }],
+         pageSize:2
+    }
+    ```
+- success
+    - It can takes one params `message`, it is mandatory.
+    - Can Use for Sending Successful Signature message.
+    - It is use as -
+
+    ```sh
+    res.success(`use successfully deleted`);
+    ```
+    
+    - This will give Response -
+    ```sh
+    {
+        "isSuccess":true,
+        "message":"use successfully deleted"
+    }
+    ```
+- failure
+    - It can takes two params `error, message`,
+     `error` it is mandatory.
+    - Can Use for Sending Error Signature message.
+    - It is use as -
+
+    ```sh
+    res.failure(`user Hardy already present`);
+    ```
+    
+    - This will give Response -
+    ```sh
+    {
+        "isSuccess":false,
+        "message":"user Hardy already present"
+    }
+    ```
 
 You can also view code on [**GIT**](https://github.com/hardy12994/express-app-generator)

@@ -1,11 +1,10 @@
 'use strict';
 module.exports = function(res) {
     return {
-        success: function(message, code) {
+        success: function(message) {
             var val = {
                 isSuccess: true,
-                message: message,
-                code: code
+                message: message
             };
             res.log.info(message || 'success', val);
             res.json(val);
@@ -19,12 +18,11 @@ module.exports = function(res) {
             res.log.error(message || 'failed', val);
             res.json(val);
         },
-        data: function(item, message, code) {
+        data: function(item, message) {
             var val = {
                 isSuccess: true,
                 message: message,
-                data: item,
-                code: code
+                data: item
             };
             res.log.info(message || 'success', val);
             res.json(val);
