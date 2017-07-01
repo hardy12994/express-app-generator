@@ -7,7 +7,9 @@ var loggerConfig = require('../default').logger;
 
 module.exports.configure = app => {
     app.get('/', (req, res) => {
-        res.render('index', { title: '~ Node Express Genrator Working ~' });
+        res.writeHeader(200, { "Content-Type": "text/html" });
+        res.write('~ Node Express Genrator Working ~');
+        res.end();
     });
 
     var api = apiRoutes(app);

@@ -10,9 +10,9 @@ exports.generate = function(port, cb) {
     });
 };
 
-exports.generate(3211, function(err, app) {
-    if (err) {
-        throw err;
-    }
-    // console.log(app);
-});
+// exports.generate(3211, function(err, app) {
+//     if (err) {
+//         throw err;
+//     }
+//     // console.log(app);
+// });

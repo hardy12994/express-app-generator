@@ -22,7 +22,7 @@ var responseDecoratorFn = function(req, res, next) {
 
 module.exports = function(app) {
 
-    let apiRoot, requiredModule;
+    let apiRoot, picApiFrom, requiredModule;
     var tasks = [];
 
     let register = function(option, filters) {
@@ -140,8 +140,9 @@ module.exports = function(app) {
                 throw ('enter correct api');
             }
 
-            apiRoot = join(appRoot.path, 'api', apiType);
-            requiredModule = require(`${apiRoot}`);
+            picApiFrom = join(appRoot.path, 'api', apiType);
+            appRoot = '/api/' + apiType;
+            requiredModule = require(`${picApiFrom}`);
             return { register: register };
         }
     };
