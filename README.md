@@ -1,6 +1,8 @@
+## express-app-generator
+
 How to install -
 ``
-    npm install express-app-generator
+    npm install express-app-generator --save
 ``
 
 To make node app with express framework, many things are needed.
@@ -16,19 +18,7 @@ Now what this Module Provide to us
 - Give Genric Response as Data ,Items etc.
 - Obvisously A Logger which helps to Log things.
 
-How to Use -
- ```sh
-let appGenrator=require('express-app-generator');
-appGenrator.generate(3789, function(err,app){
-    if(err){
-       return console.log(err);
-    }
-    // your express app is Ready to use
-    console.log(app)
-});
-```
-
-This generated app Provide us some default express Properties like -
+The generated app Provide us some default express Features like -
 - `bodyParser.json();`
 - `bodyParser.urlencoded({extended: true});`
 - `bodyParser({ limit: '50mb', keepExtensions: true })`
@@ -36,7 +26,22 @@ This generated app Provide us some default express Properties like -
 - express static path `public` folder in root of app folder
 - if port is null it use default port `3000`
 
-If you want to change express properties , you can change it by update `app.use()` or `app.set()`;
+
+## Generate Express App
+ ```sh
+let appGenrator=require('express-app-generator');
+appGenrator.generate(3789, function(err,app){
+    if(err){
+       return console.log(err);
+    }
+    // your express app is Ready to use
+    //you can check this on http://localhost:3789
+    console.log(app)
+});
+```
+
+If you want to change express properties , 
+you can change it by update `app.use()` or `app.set()`;
 
 ## Routing
 - Clean and Easy To Use.
@@ -150,6 +155,3 @@ If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
 
 Note: `api` keyword in URL is Constant all over the Router.
 So your base url will be http://localhost:3789/api/ .
-
-
-You can also viwe this on [**GIT**](https://github.com/hardy12994/express-app-generator)
