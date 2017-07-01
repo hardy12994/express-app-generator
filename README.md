@@ -54,20 +54,27 @@ Lets get started for Routing -
     api.model('users')
         .register('REST', [ authentication ]);
 ```
-This will make URL as http://localhost:3789/`api`/users .
+This will make URL as http://localhost:3789/api/users .
 
-We can use `REST` or `CRUD` Keyword to get `create,update,delete,get,search` these methods ready to use but for this You must have all these methods present in `/api/users.js` file .
+We can use `REST` or `CRUD` Keyword to get `create,update,delete,get,search` these 
+methods ready to use but for this,
+You must have all these methods present in `/api/users.js` file .
 
-The array which is present just after the `REST` is use for middlewares. Suppose I want to make authentication every time so the function of authentication will be pass in the middleware Array.
+The array which is present just after the `REST` is use for middlewares. 
+Suppose I want to make authentication every time so the function of 
+authentication will be pass in the middleware Array.
 
 Note - All the the Middleware fuctions must have parameters `req,res,next` where 
-req,res are request response express generated objects and next is the callback function which will call when one middleware work is DONE and it will go to next middleware function (if present) in that array and perform same, then go the main function in the users.js. 
+req,res are request response express generated objects and next is the 
+callback function which will call when one middleware work is DONE and
+it will go to next middleware function (if present) in that array and perform same,
+then go the main function in the users.js. 
 
 If the Request is for `GET` then it go for `expots.get=(req,res)=>{};`
-http://localhost:3789/`api`/users/:id
+http://localhost:3789/api/users/:id
 
 If the Request is for `GET` then it go for `expots.search=(req,res)=>{};`
-http://localhost:3789/`api`/users
+http://localhost:3789/api/users
 Here many query params `?` can use.
 
 If the Request is for `POST` then it go for `expots.create=(req,res)=>{};`
@@ -83,7 +90,7 @@ If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
     api.model('users')
         .register({
             action: 'GET',
-            method: 'get', // method must present in users.js
+            method: 'get', // method must present inside users.js
             url: '/:id',
             filters: [authentication] //middlewares 
         });
@@ -141,8 +148,8 @@ If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
         }]);
 ```
 
-Note: `api` keyword in URL will be Constant all over the app.
- So your base url will be http://localhost:3789/`api`/ .
+Note: `api` keyword in URL is Constant all over the Router.
+So your base url will be http://localhost:3789/api/ .
 
 
 You can also viwe this on [**GIT**](https://github.com/hardy12994/express-app-generator)
