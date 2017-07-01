@@ -3,6 +3,8 @@ var _ = require('underscore');
 var responseHelper = require('./response');
 var logger = require('../helpers/logger')();
 var async = require('async');
+var appRoot = require('app-root-path');
+var join = require('path').join;
 
 var responseDecoratorFn = function(req, res, next) {
     res.log = logger.start(req.method + ' ' + req.url);
@@ -138,8 +140,8 @@ module.exports = function(app) {
                 throw ('enter correct api');
             }
 
-            apiRoot = '/api/' + apiType;
-            requiredModule = require(`..${apiRoot}`);
+            apiRoot = join(appRoot.path, 'api', apiType);
+            requiredModule = require(`${apiRoot}`);
             return { register: register };
         }
     };

@@ -5,7 +5,7 @@ var loggerConfig = require('config').get('logger');
 var appRoot = require('app-root-path');
 
 
-module.exports.configure = (app) => {
+module.exports.configure = app => {
     app.get('/', (req, res) => {
         res.render('index', { title: '~ Node Express Genrator Working ~' });
     });
