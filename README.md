@@ -1,21 +1,21 @@
-## express-app-generator
 
-How to install -
+#### Installation -
+
 ``
     npm install express-app-generator --save
 ``
 
 To make node app with express framework, many things are needed i.e -
 - Environment where the server is made.
-- Genric Responses are set, in which form their is need.
-- Routing Genric need to set.
+- Generic Responses are set, in which form their is need.
+- Routing Generic need to set.
 - Logging where ther is a need.
 
 Now what this Module Provide to us -
-- A Enviroment where server is Run on Any Perticular Port.
-- A Genric Router with unlimited middleware are set.
-- Give Genric Response as Data ,Items etc.
-- Obvisously A Logger which helps to Log things.
+- An Enviroment where server is Run on Any Perticular Port.
+- A Generic Router with unlimited middleware can be set.
+- Give Generic Response as Data ,Items etc.
+- Obvisously a Logger which helps to Log things.
 
 The generated app Provide us some default express Features like -
 - `bodyParser.json();`
@@ -160,3 +160,5 @@ then go the main function in the `users.js`.
 
 **Note**: `api` keyword in URL is Constant all over the Router.
 So your base url will be http://localhost:3789/api/ .
+
+You can also view code on [**GIT**](https://github.com/hardy12994/express-app-generator)
