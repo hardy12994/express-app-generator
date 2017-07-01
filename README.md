@@ -5,14 +5,13 @@ How to install -
     npm install express-app-generator --save
 ``
 
-To make node app with express framework, many things are needed.
-Like -
+To make node app with express framework, many things are needed i.e -
 - Environment where the server is made.
 - Genric Responses are set, in which form their is need.
 - Routing Genric need to set.
 - Logging where ther is a need.
 
-Now what this Module Provide to us 
+Now what this Module Provide to us -
 - A Enviroment where server is Run on Any Perticular Port.
 - A Genric Router with unlimited middleware are set.
 - Give Genric Response as Data ,Items etc.
@@ -45,7 +44,7 @@ you can change it by update `app.use()` or `app.set()`;
 
 ## Routing
 - Clean and Easy To Use.
-- **Required Things -** The `api` folder in root of app is must and 
+- **Required Things** - The `api` folder in root of app is must and 
 in this folder all the .js files will be like 
 `users.js` not `user.js` , `employees.js` not `employee.js` which means `s` or `es` sufix is must.
 - This Router Provides Simple CRUD Mechanism . In which Combinations of Arrays and Objects are use To Build it.
@@ -75,18 +74,18 @@ callback function which will call when one middleware work is DONE and
 it will go to next middleware function (if present) in that array and perform same,
 then go the main function in the users.js. 
 
-If the Request is for `GET` then it go for `expots.get=(req,res)=>{};`
-http://localhost:3789/api/users/:id
+- If the Request is for [`GET`] then it go for `expots.get=(req,res)=>{};`
+[http://localhost:3789/api/users/:id]
 
-If the Request is for `GET` then it go for `expots.search=(req,res)=>{};`
-http://localhost:3789/api/users
+- If the Request is for `GET` then it go for `expots.search=(req,res)=>{};`
+[http://localhost:3789/api/users]
 Here many query params `?` can use.
 
-If the Request is for `POST` then it go for `expots.create=(req,res)=>{};`
+- If the Request is for `POST` then it go for `expots.create=(req,res)=>{};`
 
-If the Request is for `PUT` then it go for `expots.update=(req,res)=>{};`
+- If the Request is for `PUT` then it go for `expots.update=(req,res)=>{};`
 
-If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
+- If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
 
 **User Define Requests** -
 
