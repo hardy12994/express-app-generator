@@ -83,7 +83,9 @@ http://localhost:3789/api/users
 Here many query params `?` can use.
 
 If the Request is for `POST` then it go for `expots.create=(req,res)=>{};`
+
 If the Request is for `PUT` then it go for `expots.update=(req,res)=>{};`
+
 If the Request is for `DELETE` then it go for `expots.delete=(req,res)=>{};`
 
 **User Define Requests** -
