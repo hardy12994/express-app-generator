@@ -1,8 +1,7 @@
 'use strict';
 
 var winston = require('winston');
-var appRoot = require('app-root-path');
-var logConfig = require(appRoot.path + '/default').logger;
+var logConfig = require('../default').logger;
 
 var transports = [];
 
