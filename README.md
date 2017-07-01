@@ -76,6 +76,7 @@ Things `REST` Or `CRUD` Gives -
 http://localhost:3789/api/users/:id
 
 - If the Request is for **`GET`** then it go for `expots.search=(req,res)=>{};`
+
 http://localhost:3789/api/users
 Here many query params `?` can use.
 
