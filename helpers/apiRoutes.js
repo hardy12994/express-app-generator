@@ -141,7 +141,7 @@ module.exports = function(app) {
             }
 
             picApiFrom = join(appRoot.path, 'api', apiType);
-            appRoot = '/api/' + apiType;
+            apiRoot = '/api/' + apiType;
             requiredModule = require(`${picApiFrom}`);
             return { register: register };
         }
