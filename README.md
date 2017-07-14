@@ -235,14 +235,14 @@ All the Responses is of `status Code is 200` .
     - It is use as -
 
     ```sh
-    res.success(`use successfully deleted`);
+    res.success(`user successfully deleted`);
     ```
     
     - This will give Response -
     ```sh
     {
         "isSuccess":true,
-        "message":"use successfully deleted"
+        "message":"user successfully deleted"
     }
     ```
 - failure
@@ -262,5 +262,3 @@ All the Responses is of `status Code is 200` .
         "message":"user Hardy already present"
     }
     ```
-
-You can also view code on [**GIT**](https://github.com/hardy12994/express-app-generator)
