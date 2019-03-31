@@ -6,7 +6,7 @@ var logger = require('../helpers/logger')('app'),
 
 require('../settings/express').configure(app);
 
-exports.generator = (listenOn, cb) => {
+exports.generator = (listenOn, apiFullFolderPath, cb) => {
 
 
     if (listenOn && !cb) {
@@ -15,7 +15,7 @@ exports.generator = (listenOn, cb) => {
     var port = listenOn || process.env.PORT || 3000,
         server = app.listen(port, function() {
             logger.info('listening on ' + port);
-            app.appRouter = appRouter.configure(app);
+            app.appRouter = appRouter.configure(app, apiFullFolderPath);
             cb(null, app);
         });
 };
