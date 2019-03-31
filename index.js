@@ -2,7 +2,7 @@
 let appKit = require('./app/app-generator');
 
 exports.generate = function(port, apiFullFolderPath, cb) {
-    appKit.generator(port, (err, apiFullFolderPath, app) => {
+    appKit.generator(port, apiFullFolderPath, (err, app) => {
         if (err) {
             return cb(err);
         }

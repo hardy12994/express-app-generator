@@ -33,7 +33,7 @@ The generated app Provide us some default express Features like -
 ## Generate Express App
  ```sh
 let appGenrator=require('express-app-generator');
-appGenrator.generate(3789, function(err,app){
+appGenrator.generate(3789, 'src/api', function(err,app){
     if(err){
        return console.log(err);
     }
@@ -50,8 +50,9 @@ you can change it by update `app.use()` or `app.set()`;
 - Clean and Easy To Use.
 - **Required Things** 
     
-    > The `api` folder in root of app is must and 
-      in this folder all the .js files will be like 
+    > Provide the API path (where all the API's are kept) from the root of APP.
+      This will be string like `'src/api' and 
+      in this `api` folder all the .js files will be like 
       `users.js` not `user.js` , `employees.js` not `employee.js` 
       which means `s` or `es` sufix is must.
     
