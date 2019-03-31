@@ -20,7 +20,7 @@ var responseDecoratorFn = function(req, res, next) {
 };
 
 
-module.exports = function(app) {
+module.exports = function(app, apiFullFolderPath) {
 
     let apiRoot, picApiFrom, requiredModule;
     var tasks = [];
@@ -140,7 +140,7 @@ module.exports = function(app) {
                 throw ('enter correct api');
             }
 
-            picApiFrom = join(appRoot.path, 'api', apiType);
+            picApiFrom = join(appRoot.path, apiFullFolderPath, apiType);
             apiRoot = '/api/' + apiType;
             requiredModule = require(`${picApiFrom}`);
             return { register: register };

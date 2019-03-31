@@ -1,8 +1,8 @@
 "use strict";
 let appKit = require('./app/app-generator');
 
-exports.generate = function(port, cb) {
-    appKit.generator(port, (err, app) => {
+exports.generate = function(port, apiFullFolderPath, cb) {
+    appKit.generator(port, (err, apiFullFolderPath, app) => {
         if (err) {
             return cb(err);
         }
