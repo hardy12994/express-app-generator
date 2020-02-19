@@ -9,26 +9,23 @@ module.exports = function(res) {
             res.log.info(message || 'success', val);
             res.json(val);
         },
-        failure: function(error, message) {
+        failure: function(error) {
             var val = {
                 isSuccess: false,
-                message: message,
-                error: error
+                error: typeof error === 'string' ? error : JSON.stringify(error),
             };
-            res.log.error(message || 'failed', val);
+            res.log.error('failed', val);
             res.json(val);
         },
-        data: function(item, message) {
+        data: function(item) {
             var val = {
                 isSuccess: true,
-                message: message,
                 data: item
             };
-            res.log.info(message || 'success', val);
+            res.log.info('success', val);
             res.json(val);
         },
         page: function(items, total, pageNo, totalRecordsCount) {
-
             var val = {
                 isSuccess: true,
                 pageNo: pageNo || 1,
