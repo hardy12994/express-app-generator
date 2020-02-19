@@ -2,7 +2,7 @@
 module.exports = function(res) {
     return {
         success: function(message) {
-            var val = {
+            let val = {
                 isSuccess: true,
                 message: message
             };
@@ -10,15 +10,15 @@ module.exports = function(res) {
             res.json(val);
         },
         failure: function(error) {
-            var val = {
+            let val = {
                 isSuccess: false,
-                error: typeof error === 'string' ? error : JSON.stringify(error),
+                error: (typeof error === 'string') ? error : { message: error.message, stack: error.stack },
             };
             res.log.error('failed', val);
             res.json(val);
         },
         data: function(item) {
-            var val = {
+            let val = {
                 isSuccess: true,
                 data: item
             };
@@ -26,7 +26,7 @@ module.exports = function(res) {
             res.json(val);
         },
         page: function(items, total, pageNo, totalRecordsCount) {
-            var val = {
+            let val = {
                 isSuccess: true,
                 pageNo: pageNo || 1,
                 items: items,
