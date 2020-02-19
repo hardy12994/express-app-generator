@@ -1,7 +1,7 @@
 {
     "name": "express-app-generator",
-    "version": "1.0.2",
-    "description": "genrate node app with express with simple routing",
+    "version": "1.0.3",
+    "description": "Genrate node app with express with simple routing",
     "main": "index.js",
     "repository": {
         "type": "git",
