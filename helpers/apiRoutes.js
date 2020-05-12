@@ -72,6 +72,11 @@ module.exports = function(app, apiFullFolderPath) {
                     app.delete(apiUrl, tasks);
                     tasks.pop();
                 }
+                if (requiredModule.patch) {
+                    tasks.push(requiredModule.patch);
+                    app.patch(apiUrl, tasks);
+                    tasks.pop();
+                }
 
             })();
         }
@@ -121,7 +126,14 @@ module.exports = function(app, apiFullFolderPath) {
                         tasks.splice(1, filters.length + 1);
                         break;
 
+                    case "PATCH":
+                        app.patch(apiUrl, tasks);
+                        tasks.splice(1, filters.length + 1);
+                        break;
+
                     default:
+                        app[item.action.toLocaleLowerCase()](apiUrl, tasks);
+                        tasks.splice(1, filters.length + 1);
                         break;
                 }
 
