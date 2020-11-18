@@ -16,6 +16,6 @@ exports.generator = (listenOn, apiFullFolderPath, cb) => {
         server = app.listen(port, function() {
             logger.info('listening on ' + port);
             app.appRouter = appRouter.configure(app, apiFullFolderPath);
-            cb(null, app);
+            cb(null, app, server);
         });
 };
